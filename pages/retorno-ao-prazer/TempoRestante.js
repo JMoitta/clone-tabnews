@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { obtemDuracaoAtualPuerperioEmString } from "./PuerperioUtil";
+import { obtemDuracaoAtualPuerperioEmString } from "../../util/PuerperioUtil";
 
 export default function TempoRestante() {
   const [durucaoDoPuerperio, setDurucaoDoPuerperio] = useState("");
