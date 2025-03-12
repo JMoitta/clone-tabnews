@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { obtemDuracaoAtualPuerperioEmString } from "../../util/PuerperioUtil";
+import styles from "./TempoRestante.module.css";
 
 export default function TempoRestante() {
   const [durucaoDoPuerperio, setDurucaoDoPuerperio] = useState("");
@@ -14,9 +15,13 @@ export default function TempoRestante() {
   useEffect(() => {
     setDuracao();
     const indice = setInterval(setDuracao, 1000);
-    console.log("cria setInterval");
     return () => clearInterval(indice);
   }, [setDurucaoDoPuerperio, obtemDuracaoAtualPuerperioEmString]);
 
-  return <p>Faltam {durucaoDoPuerperio}</p>;
+  return (
+    <div>
+      <p>Faltam </p>
+      <span className={styles.timer}>{durucaoDoPuerperio}</span>
+    </div>
+  );
 }
