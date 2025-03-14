@@ -1,31 +1,20 @@
 "use client";
 
-import {
-  addDays,
-  formatDistance,
-  formatDuration,
-  intervalToDuration,
-} from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { addDays, intervalToDuration } from "date-fns";
 
-const nascimentoJoana = new Date(2025, 1, 12, 18, 15, 0);
-const fimDoPererio = addDays(nascimentoJoana, 42);
+export const nascimentoJoana = new Date(2025, 1, 12, 18, 15, 0);
+export const fimDoPererio = addDays(nascimentoJoana, 42);
 
 export function obtemDuracaoAtualPuerperioEmString() {
   const duration = intervalToDuration({
     start: new Date(),
     end: fimDoPererio,
   });
-  const newDuracao = formatDuration(
-    duration,
-    {
-      format: ["months", "days", "hours", "minutes", "seconds"],
-      locale: ptBR,
-      delimiter: ", ",
-    },
-    { zero: true },
-  );
 
+  return formatDuration(duration);
+}
+
+export function formatDuration(duration) {
   return new Intl.DurationFormat("pt-BR", { style: "digital" }).format(
     duration,
   );
