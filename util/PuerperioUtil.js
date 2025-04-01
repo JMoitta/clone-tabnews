@@ -14,8 +14,14 @@ export function obtemDuracaoAtualPuerperioEmString() {
   return formatDuration(duration);
 }
 
+/**
+ * @param {import("date-fns").Duration} duration
+ * @returns
+ */
 export function formatDuration(duration) {
-  return new Intl.DurationFormat("pt-BR", { style: "digital" }).format(
-    duration,
-  );
+  let style = "digital";
+  if (!duration.days || duration.days == 0) {
+    style = "long";
+  }
+  return new Intl.DurationFormat("pt-BR", { style }).format(duration);
 }
