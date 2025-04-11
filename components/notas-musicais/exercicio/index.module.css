@@ -1,0 +1,46 @@
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+
+  text-align: center;
+}
+
+.barraDeStatus {
+  background-color: lightgrey;
+}
+
+.barroDeStatusSucesso {
+  font-size: large;
+  font-weight: bold;
+  background-color: lightgreen;
+}
+
+.barroDeStatusFalhou {
+  font-size: large;
+  font-weight: bold;
+  background-color: lightcoral;
+}
+
+.boxNotasMusicais {
+  display: flex;
+  column-gap: 1%;
+  row-gap: 0.4rem;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.notaMusical {
+  padding: 0.5rem;
+  cursor: pointer;
+
+  font-size: large;
+  flex-basis: 24%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.proximoExercicio {
+  font-weight: bold;
+  font-size: x-large;
+}
