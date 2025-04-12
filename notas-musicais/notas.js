@@ -20,5 +20,15 @@ export const cifraViolinoPrimeiraPosicao = [
 
 export const notasMusicais = ["DÓ", "RÉ", "MI", "FÁ", "SOL", "LÁ", "SI"];
 
+export const mapaCifraParaNota = {
+  c: "DÓ",
+  d: "RÉ",
+  e: "MI",
+  f: "FÁ",
+  g: "SOL",
+  a: "LÁ",
+  b: "SI",
+};
+
 // export type NotaMusical = typeof notasMusicais[number]
 // export type CifraMusical = typeof cifraViolinoPrimeiraPosicao[number]

@@ -1,0 +1,22 @@
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+
+  text-align: center;
+}
+
+.botaoNovaLista {
+  padding: 0.5rem;
+  cursor: pointer;
+
+  font-size: large;
+  font-weight: bold;
+}
+
+.listaDeExercicios {
+  display: flex;
+  padding: 0.5rem;
+
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+}

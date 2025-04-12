@@ -1,9 +1,11 @@
 import { notasMusicais } from "notas-musicais/notas";
 import styles from "./index.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Partitura } from "components/Partitura";
 
 export default function Exercicio({
-  notaDiagrama,
+  numeroDoExercicio,
+  cifraDoDiagrama,
   notaPrecionada,
   contagemRegressiva,
 }) {
@@ -17,12 +19,19 @@ export default function Exercicio({
     }
   }
 
+  useEffect(() => {
+    const FIM_DA_CONTAGEM = 0;
+    if (contagemRegressiva == FIM_DA_CONTAGEM) {
+      setResultadoSelecao("Aguardando");
+    }
+  }, [contagemRegressiva]);
+
   return (
     <div className={styles.container}>
       <h1>Exercicios de notas musicais</h1>
       <BarraDeStatus status={resultadoSelecao} />
-      <h2>1. Exercicio</h2>
-      <p>{notaDiagrama}</p>
+      <h2>{numeroDoExercicio}. Exercicio</h2>
+      <Partitura nota={cifraDoDiagrama} />
       <p>Selecione uma nota abaixo correspondente ao diagrama acima:</p>
       <div className={styles.boxNotasMusicais}>
         {notasMusicais.map((notaMusical) => (
@@ -36,7 +45,7 @@ export default function Exercicio({
           </button>
         ))}
       </div>
-      {contagemRegressiva && (
+      {!!contagemRegressiva && (
         <p className={styles.proximoExercicio}>
           Proximo exercicio em
           <br /> {contagemRegressiva}
