@@ -31,10 +31,7 @@ export function NovoExercicioFormulario() {
           <div
             className={styles.instrumento}
             onClick={() =>
-              handleNewExercise(
-                "treble",
-                cifraViolinoPrimeiraPosicao.slice(0, 6),
-              )
+              handleNewExercise("treble", cifraViolinoPrimeiraPosicao)
             }
           >
             <header>Violino</header>
@@ -42,9 +39,7 @@ export function NovoExercicioFormulario() {
           </div>
           <div
             className={styles.instrumento}
-            onClick={() =>
-              handleNewExercise("bass", cifraCelloPrimeiraPosicao.slice(0, 3))
-            }
+            onClick={() => handleNewExercise("bass", cifraCelloPrimeiraPosicao)}
           >
             <header>Violoncelo</header>
             <Image src={CelloSVG} />
