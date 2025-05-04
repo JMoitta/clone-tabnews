@@ -1,0 +1,39 @@
+/* .familiaDeInstrumentos {
+} */
+
+.familiaDeInstrumentos > header {
+  margin-bottom: 0.75rem;
+  font-size: xx-large;
+}
+
+.listaInstrumentos {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.instrumento {
+  flex-grow: 0;
+  max-width: 200px;
+  height: fit-content;
+  background-color: WhiteSmoke;
+
+  padding: 0.5rem;
+  border-radius: 1rem;
+
+  font-size: large;
+  font-style: italic;
+  text-align: center;
+
+  cursor: pointer;
+}
+.instrumento:hover {
+  background-color: lightslategray;
+  color: whitesmoke;
+}
+
+.instrumento img {
+  margin-top: 0.75rem;
+  max-width: 100%;
+  height: auto;
+}

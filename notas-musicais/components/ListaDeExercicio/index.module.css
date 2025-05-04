@@ -8,16 +8,10 @@
 .botaoNovaLista {
   padding: 0.5rem;
   cursor: pointer;
-  background-color: whitesmoke;
 
   font-size: large;
   font-weight: bold;
-
-  color: black;
-  border-radius: 0.75rem;
-  border: 1px solid gray;
-  border-radius: 3px;
-  font-weight: bold;
+  line-height: 1;
 }
 
 .listaDeExercicios {

@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 import { Renderer, Stave, Formatter, Voice, StaveNote } from "vexflow";
 
-export function Partitura({ nota }) {
+export function Partitura({ nota, clef = "treble" }) {
   const divRef = useRef(null);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export function Partitura({ nota }) {
     // Create a stave of width 400 at position 10, 40 on the canvas.
     const stave = new Stave(1, 1, 190);
     // Add a clef and time signature.
-    stave.addClef("treble");
+    stave.addClef(clef);
     // .addTimeSignature("4/4");
 
     // Connect it to the rendering context and draw!
@@ -26,7 +26,7 @@ export function Partitura({ nota }) {
     // Create the notes
     const notes = [
       // A quarter-note C.
-      new StaveNote({ keys: [nota], duration: "w", align_center: true }),
+      new StaveNote({ keys: [nota], duration: "w", align_center: true, clef }),
       // new StaveNote({ keys: ["/3"], duration: "w", align_center: true })
     ];
 
