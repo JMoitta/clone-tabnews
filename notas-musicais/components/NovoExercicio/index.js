@@ -1,9 +1,11 @@
 import Image from "next/image";
 import ViolinSVG from "../../../assets/violin-svgrepo-com.svg";
 import CelloSVG from "../../../assets/cello-svgrepo-com.svg";
+import FluteSVG from "../../../assets/flute-svgrepo-com.svg";
 import styles from "./index.module.css";
 import {
   cifraCelloPrimeiraPosicao,
+  cifraFlautaTransversal,
   cifraViolinoPrimeiraPosicao,
 } from "notas-musicais/cifra-e-notas";
 import { defineNovoExercicio } from "notas-musicais/repositories/exercises";
@@ -43,6 +45,18 @@ export function NovoExercicioFormulario() {
           >
             <header>Violoncelo</header>
             <Image src={CelloSVG} />
+          </div>
+        </div>
+      </article>
+      <article className={styles.familiaDeInstrumentos}>
+        <header>Madeiras</header>
+        <div className={styles.listaInstrumentos}>
+          <div
+            className={styles.instrumento}
+            onClick={() => handleNewExercise("treble", cifraFlautaTransversal)}
+          >
+            <header>Flauta Transversa Dó</header>
+            <Image src={FluteSVG} />
           </div>
         </div>
       </article>

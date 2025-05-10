@@ -42,6 +42,31 @@ export const cifraCelloPrimeiraPosicao = [
   // "b/4",
 ];
 
+export const cifraFlautaTransversal = [
+  "c/4",
+  "d/4",
+  "e/4",
+  "f/4",
+  "g/4",
+  "a/4",
+  "b/4",
+  "c/5",
+  "d/5",
+  "e/5",
+  "f/5",
+  "g/5",
+  "a/5",
+  "b/5",
+  "c/6",
+  "d/6",
+  "e/6",
+  "f/6",
+  "g/6",
+  "a/6",
+  "b/6",
+  "c/7",
+];
+
 export const notasMusicais = ["DÓ", "RÉ", "MI", "FÁ", "SOL", "LÁ", "SI"];
 
 export const mapaCifraParaNota = {

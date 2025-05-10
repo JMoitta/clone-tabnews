@@ -10,12 +10,12 @@ export function Partitura({ nota, clef = "treble" }) {
     const renderer = new Renderer(divRef.current, Renderer.Backends.SVG);
 
     // Configure the rendering context.
-    renderer.resize(200, 120);
+    renderer.resize(300, 300);
     const context = renderer.getContext();
     context.setFont("Arial", 10);
-    context.scale(1, 1);
+    context.scale(2, 2);
     // Create a stave of width 400 at position 10, 40 on the canvas.
-    const stave = new Stave(1, 1, 190);
+    const stave = new Stave(25, 20, 100);
     // Add a clef and time signature.
     stave.addClef(clef);
     // .addTimeSignature("4/4");
