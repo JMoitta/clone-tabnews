@@ -2,10 +2,14 @@ import Image from "next/image";
 import ViolinSVG from "../../../assets/violin-svgrepo-com.svg";
 import CelloSVG from "../../../assets/cello-svgrepo-com.svg";
 import FluteSVG from "../../../assets/flute-svgrepo-com.svg";
+import ClarinetSVG from "../../../assets/clarinet-svgrepo-com.svg";
+import TubaSVG from "../../../assets/tuba-svgrepo-com.svg";
 import styles from "./index.module.css";
 import {
   cifraCelloPrimeiraPosicao,
+  cifraClarineteSibemol,
   cifraFlautaTransversal,
+  cifraTuba,
   cifraViolinoPrimeiraPosicao,
 } from "notas-musicais/cifra-e-notas";
 import { defineNovoExercicio } from "notas-musicais/repositories/exercises";
@@ -57,6 +61,25 @@ export function NovoExercicioFormulario() {
           >
             <header>Flauta Transversa Dó</header>
             <Image src={FluteSVG} />
+          </div>
+          <div
+            className={styles.instrumento}
+            onClick={() => handleNewExercise("treble", cifraClarineteSibemol)}
+          >
+            <header>Clarinete Si Bemol</header>
+            <Image src={ClarinetSVG} />
+          </div>
+        </div>
+      </article>
+      <article className={styles.familiaDeInstrumentos}>
+        <header>Metais</header>
+        <div className={styles.listaInstrumentos}>
+          <div
+            className={styles.instrumento}
+            onClick={() => handleNewExercise("bass", cifraTuba)}
+          >
+            <header>Tuba</header>
+            <Image src={TubaSVG} />
           </div>
         </div>
       </article>
