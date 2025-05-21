@@ -10,7 +10,7 @@ export function Partitura({ nota, clef = "treble" }) {
     const renderer = new Renderer(divRef.current, Renderer.Backends.SVG);
 
     // Configure the rendering context.
-    renderer.resize(300, 300);
+    renderer.resize(300, 310);
     const context = renderer.getContext();
     context.setFont("Arial", 10);
     context.scale(2, 2);
