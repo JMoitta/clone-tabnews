@@ -1,5 +1,20 @@
+.container {
+  margin: 4rem auto;
+  width: max 300px;
+}
+
+.container span {
+  font-size: 4rem;
+}
+
 .barraDeStatus {
+  margin-top: 1rem;
   background-color: lightgrey;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.5rem;
+  border-radius: 7px;
+  line-height: 1;
 }
 
 .barroDeStatusSucesso {
