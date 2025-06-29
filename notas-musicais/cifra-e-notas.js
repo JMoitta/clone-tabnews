@@ -16,6 +16,10 @@ export const cifraViolinoPrimeiraPosicao = [
   "g/5",
   "a/5",
   "b/5",
+  "c/6",
+  "d/6",
+  "e/6",
+  "f/6",
 ];
 
 export const cifraCelloPrimeiraPosicao = [
