@@ -1,4 +1,4 @@
-import { load, save } from "web-tools/indexedDB";
+import { load, remove, save } from "web-tools/indexedDB";
 
 export let exercicio = null;
 
@@ -25,4 +25,8 @@ export function persistirExercicio(exercicioRequest) {
 
 export async function carregarTodosExercicios() {
   return await load();
+}
+
+export async function removerExercicio(key) {
+  return await remove(key);
 }

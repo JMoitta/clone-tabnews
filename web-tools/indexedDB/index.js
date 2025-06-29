@@ -18,3 +18,15 @@ export function load() {
     };
   });
 }
+
+export function remove(key) {
+  return new Promise(async (resolve) => {
+    const db = await connectionIndexedDB();
+    const transaction = db.transaction(["exercicios"], "readwrite");
+    const request = transaction.objectStore("exercicios").delete(key);
+
+    request.onsuccess = (event) => {
+      resolve(request.result);
+    };
+  });
+}

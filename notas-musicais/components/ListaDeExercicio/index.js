@@ -1,31 +1,52 @@
 "use client";
-import { carregarTodosExercicios } from "notas-musicais/repositories/exercises";
+import {
+  carregarTodosExercicios,
+  removerExercicio,
+} from "notas-musicais/repositories/exercises";
 import styles from "./index.module.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export function ListaDeExercicio() {
   const [listaDeExercicios, setListaDeExercicios] = useState([]);
-  useEffect(() => {
-    async function tentaCarregarTodosOsExercicios() {
+
+  const atualizaListaDeExercicios = useCallback(
+    async function atualizaListaDeExercicios() {
       const novaLista = await carregarTodosExercicios();
-      console.log(novaLista);
+
       setListaDeExercicios(novaLista);
+    },
+    [setListaDeExercicios, carregarTodosExercicios],
+  );
+
+  useEffect(() => {
+    atualizaListaDeExercicios();
+  }, [atualizaListaDeExercicios]);
+
+  async function acaoRemoverItem(exercicio) {
+    if (confirm("Deseja mesmo remover o item?")) {
+      const result = await removerExercicio(exercicio.id);
+      console.log(result);
+      atualizaListaDeExercicios();
     }
-    tentaCarregarTodosOsExercicios();
-  }, [setListaDeExercicios, carregarTodosExercicios]);
+  }
 
   return listaDeExercicios.map((exercicio, index) => (
     <div key={index} className={styles.listaDeExercicios}>
       <span>
-        <strong>Total de exercicios: </strong>
-        {exercicio.listaDeQuestoes.length}
+        Foram <strong>{exercicio.listaDeQuestoes.length}</strong> questões com{" "}
+        <strong>
+          {exercicio.listaDeQuestoes.reduce(
+            (acc, question) => (question.respostaCorreta ? ++acc : acc),
+            0,
+          )}
+        </strong>{" "}
+        acertos
       </span>
-      <span>
-        <strong>Total de acertos: </strong>
-        {exercicio.listaDeQuestoes.reduce(
-          (acc, question) => (question.respostaCorreta ? ++acc : acc),
-          0,
-        )}
+      <span
+        className={styles.action}
+        onClick={() => acaoRemoverItem(exercicio)}
+      >
+        🗑️
       </span>
     </div>
   ));
