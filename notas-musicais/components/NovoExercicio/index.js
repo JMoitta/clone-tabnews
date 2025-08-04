@@ -1,5 +1,7 @@
 import Image from "next/image";
+import TrebleSVG from "../../../assets/Treble-clef-wikimedia.svg";
 import AutoSVG from "../../../assets/Alto-clef-wikimedia.svg";
+import BassSVG from "../../../assets/bass-clef-wikimedia.svg";
 import ViolinSVG from "../../../assets/violin-svgrepo-com.svg";
 import CelloSVG from "../../../assets/cello-svgrepo-com.svg";
 import FluteSVG from "../../../assets/flute-svgrepo-com.svg";
@@ -38,10 +40,24 @@ export function NovoExercicioFormulario() {
         <div className={styles.listaInstrumentos}>
           <div
             className={styles.instrumento}
+            onClick={() => handleNewExercise("treble", notesTrebleClef)}
+          >
+            <header>Sol</header>
+            <Image src={TrebleSVG} />
+          </div>
+          <div
+            className={styles.instrumento}
             onClick={() => handleNewExercise("alto", notesAutoClef)}
           >
             <header>Dó</header>
             <Image src={AutoSVG} />
+          </div>
+          <div
+            className={styles.instrumento}
+            onClick={() => handleNewExercise("bass", notesBassClef)}
+          >
+            <header>Fá</header>
+            <Image src={BassSVG} />
           </div>
         </div>
       </article>

@@ -183,6 +183,8 @@ export function faixaNotasMusicais(notaGrave, notaAguda) {
   return notasMusicais;
 }
 
+export const notesTrebleClef = faixaNotasMusicais("c/4", "a/5");
 export const notesAutoClef = faixaNotasMusicais("d/3", "b/4");
+export const notesBassClef = faixaNotasMusicais("e/2", "c/4");
 // export type NotaMusical = typeof notasMusicais[number]
 // export type CifraMusical = typeof cifraViolinoPrimeiraPosicao[number]
