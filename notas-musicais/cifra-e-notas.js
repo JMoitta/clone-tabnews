@@ -161,19 +161,13 @@ export function faixaNotasMusicais(notaGrave, notaAguda) {
     oitavaCorrente++
   ) {
     const cifrasNaOitavaCorrente = listCifra.filter((_, cifraIndex) => {
-      if (oitavaCorrente === primeiraOitava) {
+      if (oitavaCorrente === Number(primeiraOitava)) {
         return cifraIndex >= primeiraCifraIndex;
       }
-      // console.log({ oitavaCorrente, ultimaOitava });
       if (oitavaCorrente === Number(ultimaOitava)) {
-        // console.log({ cifraIndex, ultimaCifraIndex });
         return cifraIndex <= ultimaCifraIndex;
       }
       return true;
-    });
-    console.log({
-      oitavaCorrente,
-      cifrasNaOitavaCorrente,
     });
     cifrasNaOitavaCorrente.forEach((cifra) =>
       notasMusicais.push(`${cifra}/${oitavaCorrente}`),
