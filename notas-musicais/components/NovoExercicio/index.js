@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AutoSVG from "../../../assets/Alto-clef-wikimedia.svg";
 import ViolinSVG from "../../../assets/violin-svgrepo-com.svg";
 import CelloSVG from "../../../assets/cello-svgrepo-com.svg";
 import FluteSVG from "../../../assets/flute-svgrepo-com.svg";
@@ -11,6 +12,7 @@ import {
   cifraFlautaTransversal,
   cifraTuba,
   cifraViolinoPrimeiraPosicao,
+  notesAutoClef,
 } from "notas-musicais/cifra-e-notas";
 import { defineNovoExercicio } from "notas-musicais/repositories/exercises";
 import { useRouter } from "next/router";
@@ -31,6 +33,18 @@ export function NovoExercicioFormulario() {
   }
   return (
     <div>
+      <article className={styles.familiaDeInstrumentos}>
+        <header>Básico das claves</header>
+        <div className={styles.listaInstrumentos}>
+          <div
+            className={styles.instrumento}
+            onClick={() => handleNewExercise("alto", notesAutoClef)}
+          >
+            <header>Dó</header>
+            <Image src={AutoSVG} />
+          </div>
+        </div>
+      </article>
       <article className={styles.familiaDeInstrumentos}>
         <header>Cordas</header>
         <div className={styles.listaInstrumentos}>

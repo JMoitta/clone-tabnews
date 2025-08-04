@@ -29,12 +29,11 @@
 }
 
 .instrumento:hover {
-  background-color: lightslategray;
-  color: whitesmoke;
+  background-color: lightgray;
 }
 
 .instrumento img {
   margin-top: 0.75rem;
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
 }

@@ -137,5 +137,52 @@ export const mapaCifraParaNota = {
   b: "SI",
 };
 
+export const listCifra = ["c", "d", "e", "f", "g", "a", "b"];
+
+/**
+ *
+ * @param {string} notaGrave
+ * @param {string} notaAguda
+ */
+export function faixaNotasMusicais(notaGrave, notaAguda) {
+  const [primeiraCifra, primeiraOitava] = notaGrave.split("/");
+  const [ultimaCifra, ultimaOitava] = notaAguda.split("/");
+  const primeiraCifraIndex = listCifra.findIndex(
+    (cifra) => primeiraCifra === cifra,
+  );
+  const ultimaCifraIndex = listCifra.findIndex(
+    (cifra) => ultimaCifra === cifra,
+  );
+  // console.log(primeiraCifra, primeiraCifraIndex, ultimaCifra, ultimaCifraIndex);
+  const notasMusicais = [];
+  for (
+    let oitavaCorrente = Number(primeiraOitava);
+    oitavaCorrente <= ultimaOitava;
+    oitavaCorrente++
+  ) {
+    const cifrasNaOitavaCorrente = listCifra.filter((_, cifraIndex) => {
+      if (oitavaCorrente === primeiraOitava) {
+        return cifraIndex >= primeiraCifraIndex;
+      }
+      // console.log({ oitavaCorrente, ultimaOitava });
+      if (oitavaCorrente === Number(ultimaOitava)) {
+        // console.log({ cifraIndex, ultimaCifraIndex });
+        return cifraIndex <= ultimaCifraIndex;
+      }
+      return true;
+    });
+    console.log({
+      oitavaCorrente,
+      cifrasNaOitavaCorrente,
+    });
+    cifrasNaOitavaCorrente.forEach((cifra) =>
+      notasMusicais.push(`${cifra}/${oitavaCorrente}`),
+    );
+  }
+
+  return notasMusicais;
+}
+
+export const notesAutoClef = faixaNotasMusicais("d/3", "b/4");
 // export type NotaMusical = typeof notasMusicais[number]
 // export type CifraMusical = typeof cifraViolinoPrimeiraPosicao[number]
