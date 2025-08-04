@@ -15,6 +15,8 @@ import {
   cifraTuba,
   cifraViolinoPrimeiraPosicao,
   notesAutoClef,
+  notesBassClef,
+  notesTrebleClef,
 } from "notas-musicais/cifra-e-notas";
 import { defineNovoExercicio } from "notas-musicais/repositories/exercises";
 import { useRouter } from "next/router";
