@@ -1,130 +1,3 @@
-export const cifraViolinoPrimeiraPosicao = [
-  "g/3",
-  "a/3",
-  "b/3",
-  "c/4",
-  "d/4",
-  "e/4",
-  "f/4",
-  "g/4",
-  "a/4",
-  "b/4",
-  "c/5",
-  "d/5",
-  "e/5",
-  "f/5",
-  "g/5",
-  "a/5",
-  "b/5",
-  "c/6",
-  "d/6",
-  "e/6",
-  "f/6",
-];
-
-export const cifraCelloPrimeiraPosicao = [
-  "c/2",
-  "d/2",
-  "e/2",
-  "f/2",
-  "g/2",
-  "a/2",
-  "b/2",
-  "c/3",
-  "d/3",
-  "e/3",
-  "f/3",
-  "g/3",
-  "a/3",
-  "b/3",
-  "c/4",
-  "d/4",
-  // "e/4",
-  // "f/4",
-  // "g/4",
-  // "a/4",
-  // "b/4",
-];
-
-export const cifraFlautaTransversal = [
-  "c/4",
-  "d/4",
-  "e/4",
-  "f/4",
-  "g/4",
-  "a/4",
-  "b/4",
-  "c/5",
-  "d/5",
-  "e/5",
-  "f/5",
-  "g/5",
-  "a/5",
-  "b/5",
-  "c/6",
-  "d/6",
-  "e/6",
-  "f/6",
-  "g/6",
-  "a/6",
-  "b/6",
-  "c/7",
-];
-
-export const cifraClarineteSibemol = [
-  "e/3",
-  "f/3",
-  "g/3",
-  "a/3",
-  "b/3",
-  "c/4",
-  "d/4",
-  "e/4",
-  "f/4",
-  "g/4",
-  "a/4",
-  "b/4",
-  "c/5",
-  "d/5",
-  "e/5",
-  "f/5",
-  "g/5",
-  "a/5",
-  "b/5",
-  "c/6",
-  "d/6",
-  "e/6",
-  "f/6",
-  "g/6",
-  "a/6",
-  "b/6",
-  "c/7",
-];
-
-export const cifraTuba = [
-  "d/1",
-  "e/1",
-  "f/1",
-  "g/1",
-  "a/1",
-  "b/1",
-  "c/2",
-  "d/2",
-  "e/2",
-  "f/2",
-  "g/2",
-  "a/2",
-  "b/2",
-  "c/3",
-  "d/3",
-  "e/3",
-  "f/3",
-  "g/3",
-  "a/3",
-  "b/3",
-  "c/4",
-];
-
 export const notasMusicais = ["DÓ", "RÉ", "MI", "FÁ", "SOL", "LÁ", "SI"];
 
 export const mapaCifraParaNota = {
@@ -177,8 +50,67 @@ export function faixaNotasMusicais(notaGrave, notaAguda) {
   return notasMusicais;
 }
 
-export const notesTrebleClef = faixaNotasMusicais("c/4", "a/5");
-export const notesAutoClef = faixaNotasMusicais("d/3", "b/4");
-export const notesBassClef = faixaNotasMusicais("e/2", "c/4");
+const mapaDeClavesComNivel = {
+  treble: {
+    basico: {
+      grave: "c/4",
+      agudo: "a/5",
+    },
+    "intermediario-linhas-superiores": {
+      grave: "c/4",
+      agudo: "g/6",
+    },
+    "intermediario-linhas-inferiores": {
+      grave: "d/3",
+      agudo: "a/5",
+    },
+    avancado: {
+      grave: "d/3",
+      agudo: "g/6",
+    },
+  },
+  alto: {
+    basico: {
+      grave: "d/3",
+      agudo: "b/4",
+    },
+    "intermediario-linhas-superiores": {
+      grave: "d/3",
+      agudo: "a/5",
+    },
+    "intermediario-linhas-inferiores": {
+      grave: "e/2",
+      agudo: "b/4",
+    },
+    avancado: {
+      grave: "e/2",
+      agudo: "a/5",
+    },
+  },
+  bass: {
+    basico: {
+      grave: "e/2",
+      agudo: "c/4",
+    },
+    "intermediario-linhas-superiores": {
+      grave: "e/2",
+      agudo: "b/4",
+    },
+    "intermediario-linhas-inferiores": {
+      grave: "f/1",
+      agudo: "c/4",
+    },
+    avancado: {
+      grave: "f/1",
+      agudo: "b/4",
+    },
+  },
+};
+
+export function obtemlistaDeCifras(clave, nivel) {
+  const nivelDeNotas = mapaDeClavesComNivel[clave][nivel];
+
+  return faixaNotasMusicais(nivelDeNotas.grave, nivelDeNotas.agudo);
+}
 // export type NotaMusical = typeof notasMusicais[number]
 // export type CifraMusical = typeof cifraViolinoPrimeiraPosicao[number]

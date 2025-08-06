@@ -10,6 +10,8 @@
   display: flex;
   justify-content: center;
   gap: 0.75rem;
+
+  flex-wrap: wrap;
 }
 
 .instrumento {
@@ -37,4 +39,75 @@
   width: 200px;
   height: 200px;
   object-fit: contain;
+}
+
+.opcoes {
+  width: 200px;
+  padding: 2.5rem 0;
+  background-color: WhiteSmoke;
+
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-style: italic;
+
+  cursor: pointer;
+}
+
+.opcoes:hover {
+  background-color: lightgray;
+}
+
+.opcaoSelecionada {
+  background-color: rgb(168, 231, 245);
+
+  border: 4px solid cornflowerblue;
+
+  font-weight: bold;
+  color: midnightblue;
+}
+
+.opcaoSelecionada:hover {
+  background-color: rgb(168, 231, 245);
+}
+
+.toolboxButtons {
+  padding: 1rem 0;
+}
+
+.botaoNovaLista {
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: whitesmoke;
+
+  font-size: large;
+  font-weight: bold;
+
+  color: black;
+
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .instrumento {
+    width: 150px;
+    height: 180px;
+  }
+
+  .instrumento img {
+    width: 120px;
+    height: 120px;
+  }
+  .opcoes {
+    width: 140px;
+    padding: 2.5rem 0;
+    background-color: WhiteSmoke;
+
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    font-style: italic;
+
+    cursor: pointer;
+  }
 }
